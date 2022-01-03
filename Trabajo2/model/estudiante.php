@@ -2,20 +2,22 @@
 //Requiero el archivo de clase para extenderlo en este script
 //require_once("persona.php");
 //Clase hija
-class estudiante 
+include("model/persona.php");
+class estudiante extends persona
 {
-    private $pdo;
-    public $idEstudiante;
-    public $Nombre;
-    public $Apellido;
-    public $Edad;
-    public $Genero;
+   
     public $idPrograma;
 
     public function __CONSTRUCT()
     {
         try {
             $this->pdo = conexion::StartUp();
+            $this->id= 0;
+            $this->Nombre = "";
+            $this->Apellido = "";
+            $this->Edad = "";
+            $this->Genero = "";
+            
         } catch (Exception $e) {
             die($e->getMessage());
         }
@@ -80,7 +82,7 @@ class estudiante
                         $data->Edad,
                         $data->Genero,
                         $data->idPrograma,
-                        $data->idEstudiante
+                        $data->id
                     )
                 );
         } catch (Exception $e) {
