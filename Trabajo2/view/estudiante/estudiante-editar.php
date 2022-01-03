@@ -1,8 +1,5 @@
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css" />
-      <!-- Site CSS -->
-      <link rel="stylesheet" href="css/style.css" />
 <h1 class="page-header">
+
     <?php echo $est->idEstudiante!= null ? $est->Nombre : 'Nuevo Registro'; ?>
 </h1>
 
@@ -12,7 +9,7 @@
 </ol>
 
 <form idEstudiante="frm-estudiante" action="?c=estudiante&a=Guardar" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="idEstudiante" value="<?php echo $est->idEstudiante; ?>" />
+    <input type="hidden" name="idEstudiante" value="<?php echo $est->id; ?>" />
     
     <div class="form-group">
         <label>Nombre</label>
