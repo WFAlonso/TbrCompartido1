@@ -36,7 +36,7 @@ class estudianteController{
         $est->Genero = $_REQUEST['Genero'];
         $est->idPrograma = $_REQUEST['idPrograma'];
 
-        $est->idEstudiante > 0 
+        $est->id > 0 
             ? $this->model->Actualizar($est)
             : $this->model->Registrar($est);
         
