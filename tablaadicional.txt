@@ -1,0 +1,11 @@
+
+
+CREATE TABLE IF NOT EXISTS `estu_mate` (
+  `idEstMat` int(11) NOT NULL AUTO_INCREMENT,
+  `idEstudiante` int(11) NOT NULL DEFAULT 0,
+  `idMateria` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`idEstMat`),
+  KEY `FKEstMat` (`idEstMat`),
+  CONSTRAINT `FKEstMat_Est` FOREIGN KEY (`idEstudiante`) REFERENCES `estudiante` (`idEstudiante`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FKEstMat_Mat` FOREIGN KEY (`idMateria`) REFERENCES `materia` (`idMateria`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
