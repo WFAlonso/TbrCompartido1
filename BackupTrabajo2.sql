@@ -37,6 +37,24 @@ INSERT INTO `estudiante` (`idEstudiante`, `Nombre`, `Apellido`, `Edad`, `Genero`
 	(1, 'pepe', 'perez', 19, 'M', 1);
 /*!40000 ALTER TABLE `estudiante` ENABLE KEYS */;
 
+-- Volcando estructura para tabla trabajo2.estu_mate
+CREATE TABLE IF NOT EXISTS `estu_mate` (
+  `idEstMat` int(11) NOT NULL AUTO_INCREMENT,
+  `idEstudiante` int(11) NOT NULL DEFAULT 0,
+  `idMateria` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`idEstMat`),
+  KEY `FKEstMat` (`idEstMat`),
+  KEY `FKEstMat_Est` (`idEstudiante`),
+  KEY `FKEstMat_Mat` (`idMateria`),
+  CONSTRAINT `FKEstMat_Est` FOREIGN KEY (`idEstudiante`) REFERENCES `estudiante` (`idEstudiante`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FKEstMat_Mat` FOREIGN KEY (`idMateria`) REFERENCES `materia` (`idMateria`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- Volcando datos para la tabla trabajo2.estu_mate: ~0 rows (aproximadamente)
+DELETE FROM `estu_mate`;
+/*!40000 ALTER TABLE `estu_mate` DISABLE KEYS */;
+/*!40000 ALTER TABLE `estu_mate` ENABLE KEYS */;
+
 -- Volcando estructura para tabla trabajo2.instructor
 CREATE TABLE IF NOT EXISTS `instructor` (
   `idInstructor` int(11) NOT NULL AUTO_INCREMENT,
@@ -66,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `materia` (
   CONSTRAINT `FKMateriaPrograma` FOREIGN KEY (`idPrograma`) REFERENCES `programa` (`IdPrograma`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla trabajo2.materia: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla trabajo2.materia: ~0 rows (aproximadamente)
 DELETE FROM `materia`;
 /*!40000 ALTER TABLE `materia` DISABLE KEYS */;
 INSERT INTO `materia` (`idMateria`, `Materia`, `Semestre`, `idPrograma`) VALUES
@@ -81,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `programa` (
   PRIMARY KEY (`IdPrograma`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla trabajo2.programa: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla trabajo2.programa: ~4 rows (aproximadamente)
 DELETE FROM `programa`;
 /*!40000 ALTER TABLE `programa` DISABLE KEYS */;
 INSERT INTO `programa` (`IdPrograma`, `Programa`, `Activo`) VALUES
