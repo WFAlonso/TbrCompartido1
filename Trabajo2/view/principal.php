@@ -82,7 +82,7 @@
                            <img class="default-none" src="libs/images/icon_1w.png" alt="#" />
                          </div>
                          <div class="full">
-                           <a href = "form_cursoestudiante.php"><h4>INSCRIPCIÓN DE ESTUDIANTES</h4></a>
+                           <a href = "?c=Inscripcion&a=Index"><h4>INSCRIPCIÓN DE ESTUDIANTES</h4></a>
                          </div>
                          <div class="full">
                            <p>Esta Sección permitirá inscribir a los estudiantes</p>

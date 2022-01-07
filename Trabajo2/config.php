@@ -4,9 +4,9 @@ class config
     function __construct() {  
         $this->host = "localhost";  
         $this->user  = "root";  
-        $this->pass = "12345678";  
+        $this->pass = "root";  
         $this->db = "trabajo2";  
-        $this->port="3307";
+        $this->port="3306";
     }  
 }  
 ?> 

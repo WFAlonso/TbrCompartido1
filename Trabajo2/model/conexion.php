@@ -4,7 +4,7 @@ class conexion
 {
     public static function StartUp()
     {
-        $pdo = new PDO('mysql:host=localhost:3310;dbname=trabajo2;port=3310;charset=utf8','root', '');
+        $pdo = new PDO('mysql:host=localhost;dbname=trabajo2;port=3306;charset=utf8','root', 'root');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
     }
