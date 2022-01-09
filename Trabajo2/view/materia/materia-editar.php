@@ -1,13 +1,22 @@
+<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="stylesheet" href="lib/css/css_est.css">
+  
+</head>
+<body>
 <h1 class="page-header">
     <?php echo $mat->idMateria != null ? $mat->Materia : 'Nuevo Registro'; ?>
 </h1>
 
-<ol class="breadcrumb">
+<ol class="register-title">
   <li><a href="?c=materia">Materias</a></li>
   <li class="active"><?php echo $mat->idMateria != null ? $mat->Materia : 'Nuevo Registro'; ?></li>
 </ol>
 
-<form id="frm-materia" action="?c=materia&a=Guardar" method="post" enctype="multipart/form-data">
+<form class="register" id="frm-materia" action="?c=materia&a=Guardar" method="post" enctype="multipart/form-data">
     <input type="hidden" name="idMateria" value="<?php echo $mat->idMateria; ?>" />
     
     <div class="form-group">
@@ -39,3 +48,5 @@
         });
     })
 </script>
+</body>
+</html>

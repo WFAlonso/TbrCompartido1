@@ -1,10 +1,23 @@
-<h1 class="page-header">
-    <?php echo $inst->idInstructor!= null ? $inst->Nombre : 'Nuevo Registro'; ?>
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="stylesheet" href="lib/css/css_est.css">
+  
+</head>
+<body>
+
+<h1 class="title"> Registro de Instructor
+        <?php //echo $inst->idInstructor!= null ? $inst->Nombre : 'Registro de Instructor'; ?>
 </h1>
 
-<ol class="breadcrumb">
+<ol class="register-title">
   <li><a href="?c=instructor">instructores</a></li>
-  <li class="active"><?php echo $inst->idInstructor != null ? $inst->Nombre : 'Nuevo Registro'; ?></li>
+  
 </ol>
 
 <form idInstructor="frm-instructor" action="?c=instructor&a=Guardar" method="post" enctype="multipart/form-data">
@@ -49,3 +62,5 @@
         });
     })
 </script>
+</body>
+</html>

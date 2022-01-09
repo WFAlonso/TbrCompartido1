@@ -17,8 +17,8 @@ class estu_mateController{
     public function Crud(){
         $estu_mate = new estu_mate();
         
-        if(isset($_REQUEST['id'])){
-            $estu_mate = $this->model->Obtener($_REQUEST['id']);
+        if(isset($_REQUEST['idEstMat'])){
+            $estu_mate = $this->model->Obtener($_REQUEST['idEstMat']);
         }
         
         require_once 'view/header.php';
@@ -28,11 +28,11 @@ class estu_mateController{
     public function Guardar(){
         $estu_mate = new estu_mate();
         
-        $estu_mate->idMateria = $_REQUEST['id'];
+        $estu_mate->idMateria = $_REQUEST['idEstMat'];
         $estu_mate->idEstudiante = $_REQUEST['idEstudiante'];
         $estu_mate->idPrograma = $_REQUEST['idMateria'];
 
-        $estu_mate->idMateria > 0 
+        $estu_mate->id> 0 
             ? $this->model->Actualizar($estu_mate)
             : $this->model->Registrar($estu_mate);
         
@@ -40,7 +40,7 @@ class estu_mateController{
     }
     
     public function Eliminar(){
-        $this->model->Eliminar($_REQUEST['id']);
+        $this->model->Eliminar($_REQUEST['idEstMat']);
         header('Location: index.php');
     }
 }
